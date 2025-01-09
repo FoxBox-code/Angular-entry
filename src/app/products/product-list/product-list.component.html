@@ -1,7 +1,22 @@
 <h2>Product list</h2>
-<ul>
+<!-- <ul>
   <li (click)="selectedProduct = 'Webcam'">Webcam</li>
   <li (click)="selectedProduct = 'Microphone'">Microphone</li>
   <li (click)="selectedProduct = 'Wireless Keyboard'">Wireless Keyboard</li>
+</ul> -->
+<p>ForCycle product list :</p>
+<ul>
+  <li *ngFor="let product of products | sort ; let i = index; trackBy: trackByProducts" (click)="selectedProduct = product">{{i + 1}}.{{product.name}}</li>
 </ul>
-<app-product-details [name]="selectedProduct"></app-product-details>
+<!-- <app-product-details *ngIf="selectedProduct" [name]="selectedProduct" (bought)="onBuy()"></app-product-details> -->
+<!-- <app-product-details #product></app-product-details> this is called template variable binging it allows us to use the child class without the need of @input & @output -->
+<!-- <span>{{product.name}}</span> Here we can use the prop name because of that binding-->
+<!-- <p *ngIf="!selectedProduct">No product selected yet!</p> -->
+<!-- Better way of using the *ngIf directive is to use if else in the following example -->
+<app-product-details *ngIf="selectedProduct, else noProduct" [product]="selectedProduct" (bought)="onBuy()"></app-product-details>
+<ng-template #noProduct>
+  <p>No product selected yet!</p>
+</ng-template>
+
+<h3>Offers</h3>
+<ng-template appProductHost></ng-template>

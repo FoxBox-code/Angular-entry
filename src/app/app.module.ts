@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ProductsModule } from './products/products.module';
 import { OrdersModule } from './orders/orders.module';
 import { AppComponent } from './app.component';
+import { CopyrightDirective } from './copyright.directive';
+import { NumericDirective } from './numeric.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CopyrightDirective,
+    NumericDirective
   ],
   imports: [
     BrowserModule,
