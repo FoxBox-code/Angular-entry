@@ -6,13 +6,17 @@ import { ProductComponent } from "./product/product.component";
 import { SortPipe } from './sort.pipe';
 import { ProductHostDirective } from './product-host.directive';
 import { PermissionsDirective } from './permissions.directive';
+import { FavouritesComponent } from './favourites/favourites.component';
+import { ProductViewComponent } from './product-view/product-view.component';
 @NgModule({
   declarations: [
     ProductListComponent,
     ProductDetailsComponent,
     SortPipe,
     ProductHostDirective,
-    PermissionsDirective
+    PermissionsDirective,
+    FavouritesComponent,
+    ProductViewComponent
   ],
   imports: [
     CommonModule,

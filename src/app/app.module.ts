@@ -5,12 +5,14 @@ import { OrdersModule } from './orders/orders.module';
 import { AppComponent } from './app.component';
 import { CopyrightDirective } from './copyright.directive';
 import { NumericDirective } from './numeric.directive';
+import { KeyLoggerComponent } from './key-logger/key-logger.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CopyrightDirective,
-    NumericDirective
+    NumericDirective,
+    KeyLoggerComponent
   ],
   imports: [
     BrowserModule,

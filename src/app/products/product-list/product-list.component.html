@@ -6,7 +6,9 @@
 </ul> -->
 <p>ForCycle product list :</p>
 <ul>
-  <li *ngFor="let product of products | sort ; let i = index; trackBy: trackByProducts" (click)="selectedProduct = product">{{i + 1}}.{{product.name}}</li>
+  <li *ngFor="let product of products | sort ; let i = index; trackBy: trackByProducts" (click)="selectedProduct = product">{{i + 1}}.{{product.name}}
+    <app-product-view [integer]="i"></app-product-view>
+  </li>
 </ul>
 <!-- <app-product-details *ngIf="selectedProduct" [name]="selectedProduct" (bought)="onBuy()"></app-product-details> -->
 <!-- <app-product-details #product></app-product-details> this is called template variable binging it allows us to use the child class without the need of @input & @output -->
@@ -20,3 +22,4 @@
 
 <h3>Offers</h3>
 <ng-template appProductHost></ng-template>
+<app-favourites></app-favourites>
